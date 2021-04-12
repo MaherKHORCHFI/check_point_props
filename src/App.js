@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import NavBar from './Component/NavBar';
+import Projects from './Component/Projects';
+import Profile from './profile/Profile';
 
 function App() {
+  const handleName = (fullName) => alert(`Hi! I am ${fullName}`);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" >
+      <NavBar/>
+      <Profile
+        fullName="Maher KHORCHFI"  bio="A full stack Developer is a “do it all” developer." profession=" IT Ingenieur"
+
+        handleName={handleName}
+        
+      >
+
+
+
+        {/* Image as child_props of Profile_Component */}
+        <div>
+          <img src="./avatar.jpg" alt="" width={250} height={250} />
+        </div>
+
+      </Profile>
+      <Projects/>
     </div>
   );
 }
+
 
 export default App;
